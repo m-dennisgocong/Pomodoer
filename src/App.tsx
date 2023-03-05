@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './App.css'
 import SetTimeLength from './components/setTimeLength';
-
+import Timer from './components/Timer';
 export interface TimerState {
   [key : string] : number | string | boolean;
   session: number;
   break: number;
   timerState: boolean;
-  timerType: string;
-  timer: number;
+  CurrentTimer: string;
+  timeLeft: number;
 }
 
 function App() {
@@ -17,15 +17,18 @@ function App() {
     session : 25,
     break: 5,
     timerState: false,
-    timerType: "Session",
-    timer: 1500
+    CurrentTimer: "Session",
+    timeLeft: 1500
   });
 
   const handleTimerLength = (timerName : string, timeLength : number) : void => {
     return setTimer(updateTimer => ({
-      ...updateTimer, [timerName]: timeLength >= 1 && 60 >= timeLength ? timeLength : updateTimer[timerName]}));
+      ...updateTimer, [timerName]: timeLength, 
+    timeLeft: timeLength * 60}));
   }
+  const handleTimeController = () => {
 
+  }
   return (
     <div className="App">
       <h1 className='main-title'>Pomodoer</h1>
@@ -38,6 +41,12 @@ function App() {
           name={"session"}
           time={timer.session} 
           handleTimerLength={handleTimerLength}
+        />
+        <Timer 
+        state={timer.timerState} 
+        CurrentTimer={timer.CurrentTimer}
+        timeLeft={timer.timeLeft}
+        timeController={handleTimeController}
         />
     </div>
   );
