@@ -2,8 +2,9 @@ import { useState } from 'react';
 import './App.css'
 import SetTimeLength from './components/setTimeLength';
 import Timer from './components/Timer';
+
 export interface TimerState {
-  [key : string] : number | string | boolean;
+  [key : string] : number | string | boolean ;
   session: number;
   break: number;
   timerState: boolean;
@@ -13,22 +14,31 @@ export interface TimerState {
 
 function App() {
   
-  const [timer, setTimer] = useState<TimerState>({
+  const initialState = {
     session : 25,
     break: 5,
     timerState: false,
     CurrentTimer: "Session",
     timeLeft: 1500
-  });
+  };
+
+  const [timer, setTimer] = useState<TimerState>(initialState);
 
   const handleTimerLength = (timerName : string, timeLength : number) : void => {
     return setTimer(updateTimer => ({
-      ...updateTimer, [timerName]: timeLength, 
-    timeLeft: timeLength * 60}));
+      ...updateTimer, [timerName]: timeLength, timeLeft : (timerName === 'session' ?  (timeLength * 60) : updateTimer.timeLeft)}));
   }
-  const handleTimeController = () => {
 
+  const handlePlay_Pause = (options: boolean) : void => {
+    return setTimer(updateTimer => ({
+      ...updateTimer, timerState: options}));
   }
+  const handleReset = () : void => {
+    return setTimer(updateTimer => ({
+      ...updateTimer, ...initialState
+    }));
+  }
+  
   return (
     <div className="App">
       <h1 className='main-title'>Pomodoer</h1>
@@ -46,7 +56,8 @@ function App() {
         state={timer.timerState} 
         CurrentTimer={timer.CurrentTimer}
         timeLeft={timer.timeLeft}
-        timeController={handleTimeController}
+        play_pause={handlePlay_Pause}
+        handleReset={handleReset}
         />
     </div>
   );
