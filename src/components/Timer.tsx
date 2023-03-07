@@ -1,5 +1,6 @@
 import { BsFillPauseFill, BsPlayFill } from "react-icons/bs";
 import {GrPowerReset} from "react-icons/gr";
+
 export interface Props{
     state: boolean;
     currentTimer: string;
@@ -11,8 +12,8 @@ export interface Props{
 function Timer({state, currentTimer, timeLeft, play_pause, handleReset} : Props){
 
     const clockify = () : string => {
-        let minutes = Math.floor((timeLeft) / 60);
-        let seconds = (timeLeft) - minutes * 60;
+        let minutes : number = Math.floor((timeLeft) / 60);
+        let seconds : number = (timeLeft) - minutes * 60;
         return `${minutes < 10 ? `0`+minutes : minutes}:${seconds < 10 ? `0`+seconds : seconds}`;
     }
 
@@ -24,7 +25,6 @@ function Timer({state, currentTimer, timeLeft, play_pause, handleReset} : Props)
         return handleReset();
     }
 
-    
     return(
         <>
         <div className="timer-container">
