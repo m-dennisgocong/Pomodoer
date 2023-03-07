@@ -45,7 +45,7 @@ function App() {
       ...updateTimer, currentTimer : str, timeLeft: num}))
   }
 
-  useInterval(() => {
+  useInterval(() : void => {
     if (timer.timeLeft > 0) {
       setTimer(updateTimer => ({
       ...updateTimer, timeLeft: (updateTimer.timeLeft - 1)})) 
@@ -54,7 +54,6 @@ function App() {
       switchTimer('Break', (timer.break * 60)) : switchTimer('Session', timer.session * 60);
     }
   }, timer.timerState ? 1000 : null); 
-
 
   return (
     <div className="App">
