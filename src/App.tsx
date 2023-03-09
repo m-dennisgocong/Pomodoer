@@ -28,6 +28,11 @@ function App() {
   const [timer, setTimer] = useState<TimerState>(initialState);
 
   const handleTimerLength = (timerName : string, timeLength : number) : void => {
+
+    // disable the timer length setting for session and break time length when timer is play
+    if(timer.timerState) return; 
+
+    // update timer length
     return setTimer(updateTimer => ({
       ...updateTimer, [timerName]: timeLength, timeLeft : (timerName === 'session' ?  (timeLength * 60) : updateTimer.timeLeft)}));
   }
@@ -36,11 +41,12 @@ function App() {
     return setTimer(updateTimer => ({
       ...updateTimer, timerState: options}));
   }
+
   const handleReset = () : void => {
-    setTimer(updateTimer => ({
+    alarm(false);
+    return setTimer(updateTimer => ({
       ...updateTimer, ...initialState
     }));
-    alarm(false);
   }
 
   const alarm = (setAlarm : boolean) => {
@@ -53,7 +59,7 @@ function App() {
     }
   }
 
-  const switchTimer = (str : string, num : number) : void =>  {
+  const switchTimer = (str : string, num : number) : void =>  { 
     return setTimer(updateTimer => ({
       ...updateTimer, currentTimer : str, timeLeft: num}))
   }
