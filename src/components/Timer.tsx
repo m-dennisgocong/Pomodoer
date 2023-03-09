@@ -33,7 +33,7 @@ function Timer({state, currentTimer, timeLeft, play_pause, handleReset} : Props)
         </div>
         <div className="time-controller">   
             <button id="start_stop" onClick={()=>startOrstop()}>{state ? <BsFillPauseFill /> : <BsPlayFill/>}</button>
-            <button id="reset" onClick={()=>reset()}><GrPowerReset/></button>
+            <button id="reset" onClick={()=>reset()}><GrPowerReset className="reset-button" /></button>
         </div>
         </>
     );
