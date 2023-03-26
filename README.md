@@ -14,3 +14,11 @@ This web application is designed to help you improve your productivity by using 
     <li>After completing four work sessions, take a longer break (usually 15-30 minutes)</li>
     <li>Repeat the process as necessary</li>
 </ol>
+
+## Feature Overview
+
+- Adjustable Timer: You can set the timer to the length of time you prefer for work sessions and breaks.
+- Pause and Resume: You can pause the timer at any time and resume it later.
+- Notification: You will be notified when the timer is up
+- Reset: You can reset the timer default setting
+
