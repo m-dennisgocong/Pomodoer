@@ -1,8 +1,13 @@
 # Pomodoer
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://m-dennisgocong.github.io/Pomodoer/) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/m-dennisgocong/Pomodoer)
 
-Welcome to the Pomodoer!
+## Welcome to the Pomodoer!
 
 This web application is designed to help you improve your productivity by using the Pomodoro Technique, a time management method developed by Francesco Cirillo in the late 1980s.
+
+## Getting Started
+
+To get started, simply visit the web app https://m-dennisgocong.github.io/Pomodoer/ in your web browser.
 
 ## How to Use
 <ol>
