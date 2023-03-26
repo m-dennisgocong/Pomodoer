@@ -34,3 +34,8 @@ This web application was built using the following technologies:
 <img src = "./public/screenshot/screenshot-01.png" alt="screenshot for large screen device">
 
 
+## Run Locally
+
+After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+
+Once the dependencies are installed, you can run  `npm run dev` to start the application. You will then be able to access it at localhost
