@@ -1,6 +1,6 @@
 # Pomodoer
 
-Welcome to the Pomodoer Web App!
+Welcome to the Pomodoer!
 
 This web application is designed to help you improve your productivity by using the Pomodoro Technique, a time management method developed by Francesco Cirillo in the late 1980s.
 
@@ -27,3 +27,10 @@ This web application was built using the following technologies:
 - CSS
 - React
 - TypeScript
+
+## Screenshots
+
+<img src = "./public/screenshot/screenshot-02.png" alt="screenshot for small screen device">
+<img src = "./public/screenshot/screenshot-01.png" alt="screenshot for large screen device">
+
+
