@@ -53,10 +53,7 @@ div #break-label,#session-label{
   border-radius: 50%;
 }
 .reset-button path{
-  stroke: #fff;
-}
-#reset:hover path{
-  stroke: gray;
+  stroke: #a33f3f;
 }
 
 @media (min-width: 600px) {
