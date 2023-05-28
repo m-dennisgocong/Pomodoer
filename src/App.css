@@ -71,6 +71,8 @@ footer a{
   align-items: center;
   justify-content: center;
   gap: .5em;
+  width: 10em;
+  margin: 0 auto;
 }
 
 footer img{
