@@ -4,6 +4,7 @@ import './App.css'
 import SetTimeLength from './components/setTimeLength';
 import Timer from './components/Timer';
 import Beep from './assets/BeepSound.wav';
+import githubLogo from './logo/github-mark-white.svg';
 
 export interface TimerState {
   [key : string] : number | string | boolean ;
@@ -96,6 +97,9 @@ function App() {
         handleReset={handleReset}
         />
       <audio id="beep" preload="auto" src={Beep}></audio>
+      <footer>
+        <a href="https://m-dennisgocong.github.io/Pomodoer/"><img src={githubLogo} alt="Github Logo" /> Dennis Goc-ong</a>
+      </footer>
     </div>
   );
 }
